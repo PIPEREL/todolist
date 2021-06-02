@@ -1,0 +1,226 @@
+html {
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: linear-gradient(#141e30, #243b55);
+    background-repeat: no-repeat;
+}
+
+.container {
+    min-width: 50rem;
+    max-width: 70rem;
+    margin-left: auto;
+    margin-right: auto;
+    flex: 1 1 0%;
+}
+
+h2 {
+    font-size: 3rem;
+    font-weight: normal;
+    text-decoration: underline;
+    color: #FFFFFF;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.486), 0 0 10px rgba(255, 255, 255, 0.486), 0 0 15px rgba(255, 255, 255, 0.486), 0 0 20px rgba(255, 255, 255, 0.486), 0 0 30px rgba(255, 255, 255, 0.486), 0 0 40px rgba(255, 255, 255, 0.486), 0 0 55px rgba(255, 255, 255, 0.486), 0 0 75px rgba(255, 255, 255, 0.486);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, .5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    color: white;
+}
+
+form input {
+    flex-grow: 1;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 4rem;
+    text-transform: capitalize;
+}
+
+.label {
+    text-align: left;
+    padding-bottom: 0.5rem;
+    text-decoration: underline;
+    /*align-self: flex-start; */
+}
+
+.radio {
+    flex-direction: row;
+}
+
+.user-box {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin: 0.5rem;
+    padding: 0.5rem 0;
+}
+
+input[type=text],
+input[type=date] {
+    height: 2rem;
+    border-radius: 15px;
+}
+
+input[type=date] {
+    font-size: 1rem;
+}
+
+input[type=radio] {
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.label2 {
+    text-transform: capitalize;
+}
+
+textarea {
+    border-radius: 15px;
+}
+
+input,
+textarea {
+    padding: 0.5rem 1rem;
+}
+
+
+/***************** BOUTON *****************/
+
+button,
+input[type="submit"],
+input[type="reset"] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    font-size: 1rem;
+    text-transform: capitalize;
+}
+
+.button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 30px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+    width: 4rem;
+    margin-bottom: 1rem;
+}
+
+.button:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
+}
+
+.button span {
+    position: absolute;
+    display: block;
+}
+
+.button span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+    0% {
+        left: -100%;
+    }
+    50%,
+    100% {
+        left: 100%;
+    }
+}
+
+.button span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+    0% {
+        top: -100%;
+    }
+    50%,
+    100% {
+        top: 100%;
+    }
+}
+
+.button span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+    0% {
+        right: -100%;
+    }
+    50%,
+    100% {
+        right: 100%;
+    }
+}
+
+.button span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+    0% {
+        bottom: -100%;
+    }
+    50%,
+    100% {
+        bottom: 100%;
+    }
+}

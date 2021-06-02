@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div class="container">
+    <hr>
+        <h2>> Nouvelle tache</h2>
+
+        <form action="addlist.php" method="post">
+
+            <div class="user-box">
+                <div class="form-input">
+                    <label class="label" for="name">titre : </label>
+                    <input type="text" id="name" name="name">
+                </div>
+
+
+                <div class="form-input">
+                    <label class="label" for="msg">description : </label>
+                    <textarea id="msg" name="message" rows=7></textarea>
+                </div>
+
+                <div class="form-input">
+                    <label class="label" for="start">date de fin : </label>
+                    <input type="date" id="start" name="date" value="02-06-2021" min="01-01-2021" max="31-12-2031">
+                </div>
+
+
+                <div class="radio">
+                    <div class="form-input">priorité</div>
+
+                    <label class="label2" for="prio1"><input type="radio" id="prio1" name="prio" value="basse"><span>basse</span></label>
+
+                    <label class="label2" for="prio2"><input type="radio" id="prio2" name="prio" value="normal" checked><span>normale</span></label>
+
+                    <label class="label2" for="prio3"><input type="radio" id="prio3" name="prio" value="urgente"><span>urgente</span></label>
+                </div>
+
+            </div>
+            <div class="button">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <input type="submit" value="envoyer">
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
