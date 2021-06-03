@@ -1,6 +1,6 @@
 html {
-    height: 100%;
     font-family: Arial, Helvetica, sans-serif;
+    min-height: 100%;
 }
 
 body {
@@ -9,6 +9,7 @@ body {
     text-align: center;
     background: linear-gradient(#141e30, #243b55);
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .container {
@@ -19,9 +20,25 @@ body {
     flex: 1 1 0%;
 }
 
+section {
+    display: flex;
+    flex-direction: column;
+    color: #03e9f4;
+    font-size: 1.2rem;
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: normal;
+}
+
 h2 {
     font-size: 3rem;
     font-weight: normal;
+}
+
+h1,
+h2 a {
     text-decoration: underline;
     color: #FFFFFF;
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.486), 0 0 10px rgba(255, 255, 255, 0.486), 0 0 15px rgba(255, 255, 255, 0.486), 0 0 20px rgba(255, 255, 255, 0.486), 0 0 30px rgba(255, 255, 255, 0.486), 0 0 40px rgba(255, 255, 255, 0.486), 0 0 55px rgba(255, 255, 255, 0.486), 0 0 75px rgba(255, 255, 255, 0.486);
@@ -99,6 +116,22 @@ textarea {
 input,
 textarea {
     padding: 0.5rem 1rem;
+}
+
+.alertsuccess {
+    margin-top: 3rem;
+    color: #03e9f4;
+    text-shadow: 0 0 5px #f4032bb9, 0 0 10px #03e8f4b9, 0 0 15px #03e8f4b9, 0 0 20px #03e8f4b9, 0 0 30px #03e8f4b9, 0 0 40px #03e9f4, 0 0 55px #03e9f4;
+}
+
+.alertError {
+    margin-top: 3rem;
+    color: #f4032bb9;
+    text-shadow: 0 0 5px #f4032bb9, 0 0 10px #03e8f4b9, 0 0 15px #f4032bb9, 0 0 20px #03e8f4b9, 0 0 30px #f4032bb9, 0 0 40px #f4032bb9, 0 0 55px #f4032bb9;
+}
+
+.padding {
+    padding-left: 1rem;
 }
 
 
@@ -223,4 +256,69 @@ input[type="reset"] {
     100% {
         bottom: 100%;
     }
+}
+
+
+/*** radio ***/
+
+input[type="radio"] {
+    display: none;
+}
+
+.label2 {
+    display: inline-block;
+    margin-right: 10px;
+    color: lightblue;
+}
+
+span.big {
+    border-radius: 50% 50% 50% 50%;
+    display: inline-block;
+    height: 12px;
+    margin-bottom: -12px;
+    margin-right: 9px;
+    padding: 50px;
+    position: relative;
+    top: -3px;
+    width: 12px;
+}
+
+span.small {
+    border-radius: 50% 50% 50% 50%;
+    display: block;
+    height: 100%;
+    transition: background 0.4s ease 0s;
+    width: 100%;
+}
+
+input[type="radio"]:checked+label {
+    color: #03e9f4;
+}
+
+input[type="radio"]:checked+label span.small {
+    background-color: rgba(255, 64, 64, 0.8);
+    opacity: 1;
+}
+
+.circle .big {
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+    padding: 5px;
+    border: 2px solid #03e9f4;
+}
+
+input[type="radio"]:checked+label.circle span.small {
+    background-color: #03e9f4;
+}
+
+
+/**** test .class ***/
+
+.basse {
+    color: white;
+}
+
+.urgent {
+    color: red;
 }

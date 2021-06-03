@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" type="text/css"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<link rel="stylesheet" href="css/Lobibox.min.css" />
+    <link rel="stylesheet" href="./css/index.css">
+    <title>liste des taches</title>
 </head>
 
 <body>
     <div class="container">
+        <h1> Ma todolist </h1>
+        <section class="todolist">
+        <?php echo $affichage ?>
+        </section>
     <hr>
-        <h2>> Nouvelle tache</h2>
+        <h2><a href="http://localhost/todolist/index.php">> Nouvelle tache test</a></h2>
 
         <form action="addlist.php" method="post">
 
@@ -21,7 +28,7 @@
 
                 <div class="form-input">
                     <label class="label" for="msg">description : </label>
-                    <textarea id="msg" name="message" rows=7></textarea>
+                    <textarea id="message" name="message" rows=7></textarea>
                 </div>
 
                 <div class="form-input">
@@ -31,14 +38,28 @@
 
 
                 <div class="radio">
-                    <div class="form-input">priorité</div>
-
-                    <label class="label2" for="prio1"><input type="radio" id="prio1" name="prio" value="basse"><span>basse</span></label>
-
-                    <label class="label2" for="prio2"><input type="radio" id="prio2" name="prio" value="normal" checked><span>normale</span></label>
-
-                    <label class="label2" for="prio3"><input type="radio" id="prio3" name="prio" value="urgente"><span>urgente</span></label>
-                </div>
+        <div class="form-input">priorité</div>
+        <div>
+            <input type="radio" value="basse" id="prio1" name="prio">
+            <label class="radio circle label2" for="prio1"> 
+                <span class="big"> 
+                  <span class="small"></span> 
+                </span>Basse 
+              </label>
+            <input type="radio" checked value="normal" id="prio2" name="prio">
+            <label class="radio circle label2" for="prio2"> 
+                <span class="big"> 
+                  <span class="small"></span> 
+                </span>Normale 
+              </label>
+            <input type="radio" value="urgent" id="prio3" name="prio">
+            <label class="radio circle label2" for="prio3"> 
+                <span class="big"> 
+                  <span class="small"></span> 
+                </span>Urgente
+              </label>
+        </div>
+    </div>
 
             </div>
             <div class="button">
@@ -46,11 +67,16 @@
                 <span></span>
                 <span></span>
                 <span></span>
-                <input type="submit" value="envoyer">
+                <input type="submit" id="send-form" value="envoyer">
             </div>
+            
         </form>
+       <?php echo $success ?>
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+		<script src="js/lobibox.min.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
 </body>
 
 </html>
