@@ -1,82 +1,110 @@
 <!DOCTYPE html>
+
 <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css"
-		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-	<link rel="stylesheet" href="css/Lobibox.min.css" />
-    <link rel="stylesheet" href="./css/index.css">
-    <title>liste des taches</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="css/Lobibox.min.css" />
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/supressbutton.css">
+  <title>liste des taches</title>
 </head>
 
 <body>
-    <div class="container">
-        <h1> Ma todolist </h1>
-        <section class="todolist">
-        <?php echo $affichage ?>
-        </section>
+  <div class="container">
+    <form class="formsupp" action="removebutton.php" method="post"">
+      <h1> Ma todolist </h1>
+      <section class=" todolist">
+      <div class="checkboxes">
+        <?php for ($i = 0; $i < count($array); $i++) : ?>
+          <div class="checkbox">
+            <input class="margin-radio" value="<?= $i ?>" type="checkbox" id="check<?= $i ?>" name="indexes[]">
+            <label for="check<?= $i ?>" class="<?= $array[$i]['prio'] ?>"><?= $array[$i]['name'] ?><?php if ($timezone > $array[$i]['date']) { ?>! En retard<?php } ?></label>
+          </div>
+          <p><?= $array[$i]['message'] ?></p>
+        <?php endfor ?>
+      </div>
+      <div class="supressbut">
+        <button type='submit' class="cybr-btn">Delete<span aria-hidden>_</span>
+          <span aria-hidden class="cybr-btn__glitch">Delete</span>
+          <span aria-hidden class="cybr-btn__tag">rip</span>
+        </button>
+      </div>
+      </section>
+    </form>
     <hr>
-        <h2><a href="http://localhost/todolist/index.php">> Nouvelle tache test</a></h2>
+    <h2><a href="http://localhost/todolist/index.php">> Nouvelle tache test</a></h2>
 
-        <form action="addlist.php" method="post">
+    <form class="form-add" action="addlist.php" method="post">
 
-            <div class="user-box">
-                <div class="form-input">
-                    <label class="label" for="name">titre : </label>
-                    <input type="text" id="name" name="name">
-                </div>
-
-
-                <div class="form-input">
-                    <label class="label" for="msg">description : </label>
-                    <textarea id="message" name="message" rows=7></textarea>
-                </div>
-
-                <div class="form-input">
-                    <label class="label" for="start">date de fin : </label>
-                    <input type="date" id="start" name="date" value="02-06-2021" min="01-01-2021" max="31-12-2031">
-                </div>
-
-
-                <div class="radio">
-        <div class="form-input">priorité</div>
-        <div>
-            <input type="radio" value="basse" id="prio1" name="prio">
-            <label class="radio circle label2" for="prio1"> 
-                <span class="big"> 
-                  <span class="small"></span> 
-                </span>Basse 
-              </label>
-            <input type="radio" checked value="normal" id="prio2" name="prio">
-            <label class="radio circle label2" for="prio2"> 
-                <span class="big"> 
-                  <span class="small"></span> 
-                </span>Normale 
-              </label>
-            <input type="radio" value="urgent" id="prio3" name="prio">
-            <label class="radio circle label2" for="prio3"> 
-                <span class="big"> 
-                  <span class="small"></span> 
-                </span>Urgente
-              </label>
+      <div class="user-box">
+        <div class="form-input">
+          <label class="label" for="name">titre : </label>
+          <input type="text" id="name" name="name">
         </div>
-    </div>
 
-            </div>
-            <div class="button">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <input type="submit" id="send-form" value="envoyer">
-            </div>
-            
-        </form>
-       <?php echo $success ?>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-		<script src="js/lobibox.min.js"></script>
-		<script type="text/javascript" src="js/main.js"></script>
+
+        <div class="form-input">
+          <label class="label" for="msg">description : </label>
+          <textarea id="message" name="message" rows=7></textarea>
+        </div>
+
+        <div class="form-input">
+          <label class="label" for="start">date de fin : </label>
+          <input type="date" id="start" name="date" value="02-06-2021" min="01-01-2021" max="31-12-2031">
+        </div>
+
+
+        <div class="radio">
+          <div class="form-input">priorité</div>
+          <div>
+            <input type="radio" value="basse" id="prio1" name="prio">
+            <label class="radio circle label2" for="prio1">
+              <span class="big">
+                <span class="small"></span>
+              </span>Basse
+            </label>
+            <input type="radio" checked value="normal" id="prio2" name="prio">
+            <label class="radio circle label2" for="prio2">
+              <span class="big">
+                <span class="small"></span>
+              </span>Normale
+            </label>
+            <input type="radio" value="urgent" id="prio3" name="prio">
+            <label class="radio circle label2" for="prio3">
+              <span class="big">
+                <span class="small"></span>
+              </span>Urgente
+            </label>
+          </div>
+        </div>
+
+      </div>
+      <div class="button">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <input type="submit" id="send-form" value="envoyer">
+      </div>
+
+    </form>
+    <?php
+
+    if (!empty($_GET['success'])) {
+      if (($_GET['success'] == 1)) { ?>
+        <p class="alertsuccess">fichier envoyé avec succès!</p>
+      <?php } else { ?>
+        <p class="alertError">erreur formulaire incomplet...</p>
+    <?php  }
+    }
+    ?>
+
+
+
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="js/lobibox.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
 </body>
 
 </html>

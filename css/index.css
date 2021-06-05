@@ -20,13 +20,6 @@ body {
     flex: 1 1 0%;
 }
 
-section {
-    display: flex;
-    flex-direction: column;
-    color: #03e9f4;
-    font-size: 1.2rem;
-}
-
 h1 {
     font-size: 4rem;
     font-weight: normal;
@@ -44,7 +37,7 @@ h2 a {
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.486), 0 0 10px rgba(255, 255, 255, 0.486), 0 0 15px rgba(255, 255, 255, 0.486), 0 0 20px rgba(255, 255, 255, 0.486), 0 0 30px rgba(255, 255, 255, 0.486), 0 0 40px rgba(255, 255, 255, 0.486), 0 0 55px rgba(255, 255, 255, 0.486), 0 0 75px rgba(255, 255, 255, 0.486);
 }
 
-form {
+.form-add {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -55,7 +48,7 @@ form {
     color: white;
 }
 
-form input {
+.form-add input {
     flex-grow: 1;
 }
 
@@ -132,6 +125,23 @@ textarea {
 
 .padding {
     padding-left: 1rem;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    color: #03e9f4;
+    align-items: center;
+    font-size: 1.3rem;
+}
+
+.margin-radio {
+    margin-right: 1rem;
+}
+
+.checkbox {
+    display: flex;
+    margin-bottom: 1rem;
 }
 
 

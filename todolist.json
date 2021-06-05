@@ -6,15 +6,9 @@
         "prio": "normal"
     },
     {
-        "name": "pr\u00e9voir stock colle dentaire",
-        "message": "ae",
-        "date": "2021-07-20",
-        "prio": "basse"
-    },
-    {
-        "name": "lady",
-        "message": "coucou",
-        "date": "2020-02-05",
+        "name": "animation survol",
+        "message": "ajouter une animation au survol qui affichera la desc",
+        "date": "2021-06-06",
         "prio": "urgent"
     }
 ]
