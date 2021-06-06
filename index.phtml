@@ -11,16 +11,16 @@
 
 <body>
   <div class="container">
-    <form class="formsupp" action="removebutton.php" method="post"">
+    <form class="formsupp" action="removebutton.php" method="post">
       <h1> Ma todolist </h1>
       <section class=" todolist">
       <div class="checkboxes">
         <?php for ($i = 0; $i < count($array); $i++) : ?>
           <div class="checkbox">
             <input class="margin-radio" value="<?= $i ?>" type="checkbox" id="check<?= $i ?>" name="indexes[]">
-            <label for="check<?= $i ?>" class="<?= $array[$i]['prio'] ?>"><?= $array[$i]['name'] ?><?php if ($timezone > $array[$i]['date']) { ?>! En retard<?php } ?></label>
+            <label for="check<?= $i ?>" class="<?= $array[$i]['prio'] ?>"><?= $array[$i]['name'] ?><?php if (date('Y-m-d') > $array[$i]['date']) { ?>! En retard<?php } ?></label>
           </div>
-          <p><?= $array[$i]['message'] ?></p>
+          <!-- <p><?= $array[$i]['message'] ?></p> -->
         <?php endfor ?>
       </div>
       <div class="supressbut">
